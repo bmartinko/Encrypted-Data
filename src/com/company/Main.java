@@ -7,24 +7,17 @@ public class Main {
     Scanner kbsReader = new Scanner(System.in);
     String word;
     int press;
-    Encryption wordThing;
-
-
-        System.out.println("Press 0 to encrypt a word");
-        System.out.println("Press 1 to decrypt a word");
-     press = kbsReader.nextInt();
+    System.out.println("What word do you want to use?");
+    String wordUse = kbsReader.nextLine();
+    Encryption wordThing = new Encryption(wordUse);
+    System.out.println("Press 0 to encrypt a word");
+    System.out.println("Press 1 to decrypt a word");
+    press = kbsReader.nextInt();
     if (press == 1){
-
-        System.out.println("Please write a word to encrypt");
-        word = kbsReader.nextLine();
-        wordThing = new Encryption(word);
-        System.out.println("Your encrypted word is " + wordThing.encrypt(word));
+        System.out.println("Your encrypted word is " + wordThing.encrypt(wordUse));
     }
     else if (press == 0){
-            System.out.println("Please write a word to encrypt");
-            word = kbsReader.nextLine();
-            wordThing = new Encryption(word);
-            System.out.println("Your encrypted word is " + wordThing.decrypt(word));
+            System.out.println("Your encrypted word is " + wordThing.decrypt(wordUse));
         }
 
 
