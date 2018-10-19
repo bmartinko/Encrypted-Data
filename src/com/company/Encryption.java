@@ -4,18 +4,30 @@ package com.company;
  * Created by bm846 on 10/15/18.
  */
 public class Encryption {
-    public String word;
-    public int encryption;
+    public String wordA;
+    public String wordB ;
 
-    public Encryption (String w){
-
-        for (int i = 0; i < w.length(); i++){
-            char next = w.charAt(i);
-            encryption = next + 5;
-            word += encryption;
-
-        }
-        System.out.println(word);
+    public Encryption (String s){
+        wordA = s;
     }
 
+    public String encrypt (String wordA){
+
+        for (int i = 0; i < wordA.length(); i++){
+        char next = wordA.charAt(i);
+        next+= 5;
+        wordB += next ;
+
+        }
+        return wordB;
+    }
+    public String decrypt (String wordA){
+        for(int i = 0; i < wordA.length(); i++){
+            char next = wordA.charAt(i);
+            next -= 5;
+            wordB += next;
+        }
+        return wordB;
+    }
 }
+

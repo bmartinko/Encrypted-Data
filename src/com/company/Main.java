@@ -3,14 +3,31 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-    Scanner kbsReader = new Scanner(System.in);
-    System.out.println("Please type a word");
-    String input = kbsReader.nextLine();
-    Encryption output = new Encryption(input);
-    System.out.println(output);
 
-    System.out.println("Do you want to decrypt this? If so, press 1. Otherwise, press 2.");
-    int press = kbsReader.nextInt();
+    Scanner kbsReader = new Scanner(System.in);
+    String word;
+    int press;
+    Encryption wordThing;
+
+
+        System.out.println("Press 0 to encrypt a word");
+        System.out.println("Press 1 to decrypt a word");
+     press = kbsReader.nextInt();
+    if (press == 1){
+
+        System.out.println("Please write a word to encrypt");
+        word = kbsReader.nextLine();
+        wordThing = new Encryption(word);
+        System.out.println("Your encrypted word is " + wordThing.encrypt(word));
+    }
+    else if (press == 0){
+            System.out.println("Please write a word to encrypt");
+            word = kbsReader.nextLine();
+            wordThing = new Encryption(word);
+            System.out.println("Your encrypted word is " + wordThing.decrypt(word));
+        }
+
+
 
 
 
